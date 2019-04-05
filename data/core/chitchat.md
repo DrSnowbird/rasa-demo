@@ -30,16 +30,6 @@
 * ask_whatspossible
     - action_chitchat
 
-## ask_whatisrasa
-* greet
-    - action_greet_user
-* ask_whatisrasa
-    - action_chitchat
-* explain
-    - utter_explain_stack
-    - utter_stack_details
-    - utter_explain_nlucore
-
 ## just newsletter + confirm
 * greet
     - action_greet_user
