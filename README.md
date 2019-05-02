@@ -82,28 +82,90 @@ your website.
 `models` - the Core models persistence folder, i.e., `models/dialogue`
 
 ```
+├── augmentedmemo-only.yml
+├── data
+│   ├── core
+│   │   ├── canthelp.md
+│   │   ├── chitchat.md
+│   │   ├── closetheloop.md
+│   │   ├── faqs.md
+│   │   ├── feedback.md
+│   │   ├── get_started.md
+│   │   ├── handoff.md
+│   │   ├── oos.md
+│   │   ├── step3_install_rasa.md
+│   │   ├── step4.md
+│   │   └── stories.md
+│   ├── intent_description_mapping.csv
+│   └── nlu
+│       └── nlu.md
 ├── demo
 │   ├── actions.py
 │   ├── api.py
 │   ├── community_events.py
 │   ├── config.py
 │   ├── gdrive_service.py
-│   └── __init__.py
+│   ├── __init__.py
+│   └── __pycache__
+│       ├── actions.cpython-36.pyc
+│       ├── api.cpython-36.pyc
+│       ├── community_events.cpython-36.pyc
+│       ├── config.cpython-36.pyc
+│       ├── gdrive_service.cpython-36.pyc
+│       └── __init__.cpython-36.pyc
+├── Dockerfile
 ├── domain.yml
 ├── endpoints.yml
+├── LICENSE
+├── log-rasa-core-training.pdf
+├── logs
+│   ├── log-rasa-core-training.pdf
+│   └── pip-install-error.txt
+├── Makefile
 ├── models
 │   ├── dialogue
 │   │   ├── domain.json
 │   │   ├── domain.yml
 │   │   ├── policy_0_KerasPolicy
+│   │   │   ├── featurizer.json
+│   │   │   ├── keras_model.h5
+│   │   │   └── keras_policy.json
 │   │   ├── policy_1_AugmentedMemoizationPolicy
+│   │   │   ├── featurizer.json
+│   │   │   └── memorized_turns.json
 │   │   ├── policy_2_TwoStageFallbackPolicy
+│   │   │   └── two_stage_fallback_policy.json
 │   │   ├── policy_3_FormPolicy
+│   │   │   ├── featurizer.json
+│   │   │   └── memorized_turns.json
 │   │   └── policy_metadata.json
 │   └── nlu
 │       └── current
+│           ├── checkpoint
+│           ├── crf_model.pkl
+│           ├── entity_synonyms.json
+│           ├── intent_classifier_tensorflow_embedding.ckpt.data-00000-of-00001
+│           ├── intent_classifier_tensorflow_embedding.ckpt.index
+│           ├── intent_classifier_tensorflow_embedding.ckpt.meta
+│           ├── intent_classifier_tensorflow_embedding_encoded_all_intents.pkl
+│           ├── intent_classifier_tensorflow_embedding_inv_intent_dict.pkl
+│           ├── intent_featurizer_count_vectors.pkl
+│           ├── metadata.json
+│           └── training_data.json
 ├── nlu_tensorflow.yml
+├── pip-install-error.txt
 ├── policy.yml
+├── rasa_core.log
+├── rasa_demo.egg-info
+│   ├── dependency_links.txt
+│   ├── PKG-INFO
+│   ├── requires.txt
+│   ├── SOURCES.txt
+│   └── top_level.txt
+├── README.md
+├── requirements.txt
+├── setup.py
+└── travis_gcloud_auth.json.enc
 
 ```
 # License
