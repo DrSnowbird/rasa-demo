@@ -2,6 +2,8 @@
 
 TEST_PATH=./
 
+PYTHON=`which python3.6`
+
 help:
 	@echo "    train-nlu"
 	@echo "        Train the natural language understanding using Rasa NLU."
@@ -13,26 +15,26 @@ help:
 	@echo "        Saves the story graphs into a file"
 
 run-actions:
-	python3 -m rasa_core_sdk.endpoint --actions demo.actions
+	${PYTHON} -m rasa_core_sdk.endpoint --actions demo.actions
 
 train-nlu:
-	python3 -m rasa_nlu.train -c nlu_tensorflow.yml --fixed_model_name current --data data/nlu/ -o models --project nlu --verbose
+	${PYTHON} -m rasa_nlu.train -c nlu_tensorflow.yml --fixed_model_name current --data data/nlu/ -o models --project nlu --verbose
 
 train-core:
-	python3 -m rasa_core.train -d domain.yml -s data/core -c policy.yml --debug -o models/dialogue
+	${PYTHON} -m rasa_core.train -d domain.yml -s data/core -c policy.yml --debug -o models/dialogue
 
 train-memo:
-	python -m rasa_core.train -d domain.yml -s data/core -c augmentedmemo-only.yml -o models/dialogue --augmentation 0
+	${PYTHON} -m rasa_core.train -d domain.yml -s data/core -c augmentedmemo-only.yml -o models/dialogue --augmentation 0
 
 run-cmdline:
 	make run-actions&
-	python3 -m rasa_core.run -d models/dialogue -u models/nlu/current --debug --endpoints endpoints.yml
-
+	${PYTHON} -m rasa_core.run -d models/dialogue -u models/nlu/current --debug --endpoints endpoints.yml
+Did 
 visualize:
-	python3 -m rasa_core.visualize -s data/core/ -d domain.yml -o story_graph.png
+	${PYTHON} -m rasa_core.visualize -s data/core/ -d domain.yml -o story_graph.png
 
 train-online:
-	python -m rasa_core.train -u models/nlu/current/ --online --core models/dialogue/
+	${PYTHON} -m rasa_core.train -u models/nlu/current/ --online --core models/dialogue/
 
 evaluate-core:
-	python -m rasa_core.evaluate --core models/dialogue -s data/core/ --fail_on_prediction_errors
+	${PYTHON} -m rasa_core.evaluate --core models/dialogue -s data/core/ --fail_on_prediction_errors
