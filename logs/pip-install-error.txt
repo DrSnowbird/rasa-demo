@@ -1,0 +1,5 @@
+rasa-nlu 0.14.0 has requirement coloredlogs~=9.0, but you'll have coloredlogs 10.0 which is incompatible.
+rasa-core 0.13.0a4 has requirement rasa-nlu~=0.13.0, but you'll have rasa-nlu 0.14.0 which is incompatible.
+rasa-core 0.13.0a4 has requirement scikit-learn~=0.19.0, but you'll have scikit-learn 0.20.3 which is incompatible.
+rasa-core 0.13.0a4 has requirement tensorflow==1.10.0, but you'll have tensorflow 1.13.1 which is incompatible.
+

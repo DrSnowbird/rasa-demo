@@ -21,7 +21,7 @@ train-nlu:
 	${PYTHON} -m rasa_nlu.train -c nlu_tensorflow.yml --fixed_model_name current --data data/nlu/ -o models --project nlu --verbose
 
 train-core:
-	${PYTHON} -m rasa_core.train -d domain.yml -s data/core -c policy.yml --debug -o models/dialogue
+	${PYTHON} -m rasa_core.train -d domain.yml -s data/core -c policy.yml --debug -o models/dialogue --augmentation 0
 
 train-memo:
 	${PYTHON} -m rasa_core.train -d domain.yml -s data/core -c augmentedmemo-only.yml -o models/dialogue --augmentation 0
